@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSE 564 Lab 1</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <script>var chartType = 0</script>
+    <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+    <script src="force_directed_layout.js"></script>
+    <script src="pie_chart.js"></script>
+    <script src="bar_chart.js"></script>
+    <script src="index.js"></script>
+    <script src="sliderHandler.js"></script>
+</head>
+<body>
+
+<header>
+    <div style="text-align:center; color:white; background-color: green" >
+        <h1 style="margin-top:0">FIFA 19 dataset</h1>
+    </div>
+</header>
+
+<!--<h2>Vertical Navigation Bar</h2>-->
+<!--<p>In this example, we create an "active" class with a green background color and a white text. The class is added to the "Home" link.</p>-->
+
+<ul>
+    <li><a id = "btnOverall" class="active" href="#" onclick="fnOverall()">Overall</a></li>
+    <li><a id = "btnBalance" href="#" onclick="fnBalance()">Balance</a></li>
+    <li><a id = "btnStamina" href="#" onclick="fnStamina()">Stamina</a></li>
+    <li><a id = "btnStrength" href="#" onclick="fnStrength()">Strength</a></li>
+</ul>
+
+<svg id="mysvg" width="1000" height="500"></svg>
+
+<div id="mySliderContainer" class="sliderContainer">
+    <p>Bin width</p>
+    <input id="slider" type="range" min="5" max="15" value="10" onchange="sliderHandler(value)">
+    <output id="sliderNumber">10</output>
+</div>
+
+<!--<div id="slider">-->
+    <!--<input class="bar" type="range" id="rangeinput" min="1" max="25" value="1" onchange="rangevalue.value=value"/>-->
+    <!--<span class="highlight"></span>-->
+    <!--<output id="rangevalue">1</output>-->
+<!--</div>-->
+
+</body>
+</html>
