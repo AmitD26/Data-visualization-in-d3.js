@@ -295,8 +295,8 @@ function drawForceDirectedLayout(data, noOfBins) {
             chartType = 0;
             document.getElementById("mysvg").innerHTML = "";
             document.getElementById("mySliderContainer").style.visibility = "visible";
-            drawBarChart(data, noOfBins);
-    });
+            drawBarChart(data, noOfBins)
+        });
 
 
 
