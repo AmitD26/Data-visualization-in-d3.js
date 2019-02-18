@@ -60,6 +60,12 @@ function drawForceDirectedLayout(data, noOfBins) {
         width = svg.attr("width") - margin,
         height = svg.attr("height") - margin;
 
+    svg.append("text")
+        .attr("transform", "translate(300,0)")
+        .attr("x", 50)
+        .attr("y", 50)
+        .attr("font-size", "24px")
+        .text("FIFA 19 data");
     //
     // //Set background color of svg container or chart.
     // svg.append("rect")

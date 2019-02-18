@@ -4,7 +4,7 @@ function sliderHandler(value) {
     // var RS = [];
     // var LW = [];
 
-    document.getElementById("sliderNumber").innerHTML = +value;
+    document.getElementById("sliderNumber").innerHTML = "Number of bins: " + value;
     // d3.csv("data.csv", function(csvdata) {
     //     // fl = 0;
     //     csvdata.map(function (d) {
