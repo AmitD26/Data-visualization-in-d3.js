@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>CSE 564 Lab 1</title>
-    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="Stylesheets/styles.css"/>
+    <link rel="stylesheet" href="Stylesheets/slider.css"/>
+    <link rel="stylesheet" href="Stylesheets/svg.css"/>
     <script>var chartType = 0</script>
     <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
     <script src="force_directed_layout.js"></script>
@@ -12,7 +14,7 @@
     <script src="index.js"></script>
     <script src="sliderHandler.js"></script>
 </head>
-<body>
+<body background="">
 
 <header>
     <div style="text-align:center; color:white; background-color: green" >
@@ -30,12 +32,14 @@
     <li><a id = "btnStrength" href="#" onclick="fnStrength()">Strength</a></li>
 </ul>
 
-<svg id="mysvg" width="1000" height="500"></svg>
+<div id="svgContainer" class="svgContainer">
+    <svg id="mysvg" width="1000" height="500"></svg>
+</div>
 
 <div id="mySliderContainer" class="sliderContainer">
-    <p>Bin width</p>
-    <input id="slider" type="range" min="5" max="15" value="10" onchange="sliderHandler(value)">
-    <output id="sliderNumber">10</output>
+    <p id="sliderNumber" align="center">Number of bins: 10</p>
+    <input id="slider" class="slider" type="range" min="5" max="15" value="10" onchange="sliderHandler(value)">
+
 </div>
 
 <!--<div id="slider">-->
