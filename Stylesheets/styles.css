@@ -48,3 +48,8 @@ li a:hover:not(.active) {
     stroke: #fff;
     stroke-width: 1.5px;
 }
+
+.grid line {
+    stroke: green;
+    stroke-opacity: 0.5
+}

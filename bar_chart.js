@@ -70,6 +70,9 @@
         .attr("font-size", "20px")
         .text("Counts");
 
+     g.append("g")
+         .call(d3.axisLeft(y).tickFormat("").ticks(10).tickSizeInner(-width)).attr("class", "grid");
+
     g.selectAll(".bar")
         .data(binValues)
         .enter().append("rect")
