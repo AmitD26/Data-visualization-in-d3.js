@@ -1,4 +1,6 @@
  function drawBarChart(data, noOfBins) {
+    document.getElementById("mySliderContainer").style.visibility = "visible";
+
     var binSize = (d3.max(data) - d3.min(data))/noOfBins;
     console.log(binSize);
 
@@ -28,7 +30,7 @@
         .attr("x", 50)
         .attr("y", 50)
         .attr("font-size", "24px")
-        .text("FIFA 19 data");
+        .text("Bar chart");
 
     var x = d3.scaleBand().range([0, width]).padding(0.4);
     var y = d3.scaleLinear().range([height, 0]);
@@ -42,14 +44,16 @@
 
 
      g.append("g")
-        .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x))
-        .append("text")
-        .attr("y", height - 250)
-        .attr("x", width - 100)
-        .attr("text-anchor", "end")
-        .attr("stroke", "black")
-        .text("Bins");
+         .attr("transform", "translate(0," + height + ")")
+         .call(d3.axisBottom(x))
+         .append("text")
+         .attr("y", height - 250)
+         .attr("x", width/2)
+         .attr("text-anchor", "middle")
+         .attr("fill", "black")
+         .attr("font-family", "sans-serif")
+         .attr("font-size", "20px")
+         .text("Bins");
 
     g.append("g")
         .call(d3.axisLeft(y).tickFormat(function(d){
@@ -57,10 +61,13 @@
         }).ticks(10))
         .append("text")
         .attr("transform", "rotate(-90)")
-        .attr("y", 6)
+        .attr("y", 50)
+        .attr("x", -140)
         .attr("dy", "-5.1em")
-        .attr("text-anchor", "end")
-        .attr("stroke", "black")
+        .attr("text-anchor", "middle")
+        .attr("fill", "black")
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "20px")
         .text("Counts");
 
     g.selectAll(".bar")

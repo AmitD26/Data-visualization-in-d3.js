@@ -1,4 +1,6 @@
 function drawPieChart(data, noOfBins) {
+    document.getElementById("mySliderContainer").style.visibility = "visible";
+
     var binSize = (d3.max(data) - d3.min(data))/noOfBins;
     console.log(binSize);
 
@@ -29,7 +31,7 @@ function drawPieChart(data, noOfBins) {
         .attr("x", 50)
         .attr("y", 50)
         .attr("font-size", "24px")
-        .text("FIFA 19 data");
+        .text("Pie chart");
 
 
 
@@ -99,7 +101,7 @@ function drawPieChart(data, noOfBins) {
         // .attr("width", width+60)
         // .attr("height", height+60)
         .append("g")
-        .attr("transform", "translate(" + 0.65 * width + "," + 0.90 * height + ")");
+        .attr("transform", "translate(" + 0.50 * width + "," + 0.90 * height + ")");
 
     var renderArcs = svg.selectAll(".arc")
         .data(pie(binValArray))

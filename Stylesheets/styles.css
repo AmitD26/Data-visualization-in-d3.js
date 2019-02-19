@@ -13,9 +13,11 @@ ul {
 
 li a {
     display: block;
-    color: #000;
+    color: #fff;
     padding: 8px 16px;
     text-decoration: none;
+    background-color: #333;
+    /*border-bottom: 1px solid #bbb;*/
 }
 
 li a.active {
@@ -30,11 +32,11 @@ li a:hover:not(.active) {
 }
 
 .bar {
-    fill: orange;
+    fill: green;
 }
 
 .highlight {
-    fill: steelblue;
+    fill: chartreuse;
 }
 
 .links line {

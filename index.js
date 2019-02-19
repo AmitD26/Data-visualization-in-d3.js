@@ -3,11 +3,12 @@ function fnOverall() {
     document.getElementById("btnOverall").className = "active";
     noOfBins = document.getElementById("slider").value;
     document.getElementById("mysvg").innerHTML = "";
-    if (chartType == 0) {
-        drawBarChart(overall, +noOfBins);
-    }
-    else if (chartType == 1) {
+    if (chartType == 1) {
         drawPieChart(overall, +noOfBins);
+    }
+    else {
+        chartType = 0;
+        drawBarChart(overall, +noOfBins);
     }
 }
 
@@ -16,11 +17,12 @@ function fnBalance() {
     document.getElementById("btnBalance").className = "active";
     noOfBins = document.getElementById("slider").value;
     document.getElementById("mysvg").innerHTML = "";
-    if (chartType == 0) {
-        drawBarChart(balance, +noOfBins);
-    }
-    else if (chartType == 1) {
+    if (chartType == 1) {
         drawPieChart(balance, +noOfBins);
+    }
+    else {
+        chartType = 0;
+        drawBarChart(balance, +noOfBins);
     }
 }
 
@@ -29,11 +31,12 @@ function fnStamina() {
     document.getElementById("btnStamina").className = "active";
     noOfBins = document.getElementById("slider").value;
     document.getElementById("mysvg").innerHTML = "";
-    if (chartType == 0) {
-        drawBarChart(stamina, +noOfBins);
-    }
-    else if (chartType == 1) {
+    if (chartType == 1) {
         drawPieChart(stamina, +noOfBins);
+    }
+    else {
+        chartType = 0;
+        drawBarChart(stamina, +noOfBins);
     }
 }
 
@@ -42,11 +45,166 @@ function fnStrength() {
     document.getElementById("btnStrength").className = "active";
     noOfBins = document.getElementById("slider").value;
     document.getElementById("mysvg").innerHTML = "";
-    if (chartType == 0) {
+    if (chartType == 1) {
+        drawPieChart(strength, +noOfBins);
+    }
+    else {
+        chartType = 0;
         drawBarChart(strength, +noOfBins);
     }
-    else if (chartType == 1) {
-        drawPieChart(strength, +noOfBins);
+}
+
+function fnHeadingAccuracy() {
+    document.getElementsByClassName("active")[0].className = "";
+    document.getElementById("btnHeadingAccuracy").className = "active";
+    noOfBins = document.getElementById("slider").value;
+    document.getElementById("mysvg").innerHTML = "";
+    if (chartType == 1) {
+        drawPieChart(headingAccuracy, +noOfBins);
+    }
+    else {
+        chartType = 0;
+        drawBarChart(headingAccuracy, +noOfBins);
+    }
+}
+
+function fnDribbling() {
+    document.getElementsByClassName("active")[0].className = "";
+    document.getElementById("btnDribbling").className = "active";
+    noOfBins = document.getElementById("slider").value;
+    document.getElementById("mysvg").innerHTML = "";
+    if (chartType == 1) {
+        drawPieChart(dribbling, +noOfBins);
+    }
+    else {
+        chartType = 0;
+        drawBarChart(dribbling, +noOfBins);
+    }
+}
+
+function fnBallControl() {
+    document.getElementsByClassName("active")[0].className = "";
+    document.getElementById("btnBallControl").className = "active";
+    noOfBins = document.getElementById("slider").value;
+    document.getElementById("mysvg").innerHTML = "";
+    if (chartType == 1) {
+        drawPieChart(ballControl, +noOfBins);
+    }
+    else {
+        chartType = 0;
+        drawBarChart(ballControl, +noOfBins);
+    }
+}
+
+function fnAcceleration() {
+    document.getElementsByClassName("active")[0].className = "";
+    document.getElementById("btnAcceleration").className = "active";
+    noOfBins = document.getElementById("slider").value;
+    document.getElementById("mysvg").innerHTML = "";
+    if (chartType == 1) {
+        drawPieChart(acceleration, +noOfBins);
+    }
+    else {
+        chartType = 0;
+        drawBarChart(acceleration, +noOfBins);
+    }
+}
+
+function fnSprintSpeed() {
+    document.getElementsByClassName("active")[0].className = "";
+    document.getElementById("btnSprintSpeed").className = "active";
+    noOfBins = document.getElementById("slider").value;
+    document.getElementById("mysvg").innerHTML = "";
+    if (chartType == 1) {
+        drawPieChart(sprintSpeed, +noOfBins);
+    }
+    else {
+        chartType = 0;
+        drawBarChart(sprintSpeed, +noOfBins);
+    }
+}
+
+function fnAgility() {
+    document.getElementsByClassName("active")[0].className = "";
+    document.getElementById("btnAgility").className = "active";
+    noOfBins = document.getElementById("slider").value;
+    document.getElementById("mysvg").innerHTML = "";
+    if (chartType == 1) {
+        drawPieChart(agility, +noOfBins);
+    }
+    else {
+        chartType = 0;
+        drawBarChart(agility, +noOfBins);
+    }
+}
+
+function fnShotPower() {
+    document.getElementsByClassName("active")[0].className = "";
+    document.getElementById("btnShotPower").className = "active";
+    noOfBins = document.getElementById("slider").value;
+    document.getElementById("mysvg").innerHTML = "";
+    if (chartType == 1) {
+        drawPieChart(shotPower, +noOfBins);
+    }
+    else {
+        chartType = 0;
+        drawBarChart(shotPower, +noOfBins);
+    }
+}
+
+function fnAggression() {
+    document.getElementsByClassName("active")[0].className = "";
+    document.getElementById("btnAggression").className = "active";
+    noOfBins = document.getElementById("slider").value;
+    document.getElementById("mysvg").innerHTML = "";
+    if (chartType == 1) {
+        drawPieChart(aggression, +noOfBins);
+    }
+    else {
+        chartType = 0;
+        drawBarChart(aggression, +noOfBins);
+    }
+}
+
+function fnJumping() {
+    document.getElementsByClassName("active")[0].className = "";
+    document.getElementById("btnJumping").className = "active";
+    noOfBins = document.getElementById("slider").value;
+    document.getElementById("mysvg").innerHTML = "";
+    if (chartType == 1) {
+        drawPieChart(jumping, +noOfBins);
+    }
+    else {
+        chartType = 0;
+        drawBarChart(jumping, +noOfBins);
+    }
+}
+
+function fnVision() {
+    document.getElementsByClassName("active")[0].className = "";
+    document.getElementById("btnVision").className = "active";
+    noOfBins = document.getElementById("slider").value;
+    document.getElementById("mysvg").innerHTML = "";
+    if (chartType == 1) {
+        drawPieChart(vision, +noOfBins);
+    }
+    else {
+        chartType = 0;
+        drawBarChart(vision, +noOfBins);
+    }
+}
+
+function fnComposure() {
+    document.getElementsByClassName("active")[0].className = "";
+    document.getElementById("btnComposure").className = "active";
+    noOfBins = document.getElementById("slider").value;
+    document.getElementById("mysvg").innerHTML = "";
+    if (chartType == 1) {
+        drawPieChart(composure, +noOfBins);
+    }
+    else {
+        chartType = 0;
+        drawBarChart(composure, +noOfBins);
     }
 }
 
@@ -54,6 +212,17 @@ var overall = [];
 var balance = [];
 var strength = [];
 var stamina = [];
+var headingAccuracy = [];
+var dribbling = [];
+var ballControl = [];
+var acceleration = [];
+var sprintSpeed = [];
+var agility = [];
+var shotPower = [];
+var aggression = [];
+var jumping = [];
+var vision = [];
+var composure = [];
 
 // console.log(overall);
 
@@ -74,6 +243,17 @@ d3.csv("data.csv", function(csvdata) {
         balance.push(+d.Balance);
         strength.push(+d.Strength);
         stamina.push(+d.Stamina);
+        headingAccuracy.push(+d.HeadingAccuracy)
+        dribbling.push(d.Dribbling);
+        ballControl.push(d.BallControl);
+        acceleration.push(d.Acceleration);
+        sprintSpeed.push(d.SprintSpeed);
+        agility.push(d.Agility);
+        shotPower.push(d.ShotPower);
+        aggression.push(d.Aggression);
+        jumping.push(d.Jumping);
+        vision.push(d.Vision);
+        composure.push(d.Composure);
 
 
         // }

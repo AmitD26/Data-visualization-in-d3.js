@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="Stylesheets/styles.css"/>
     <link rel="stylesheet" href="Stylesheets/slider.css"/>
     <link rel="stylesheet" href="Stylesheets/svg.css"/>
+    <link rel="stylesheet" href="Stylesheets/header.css"/>
+    <link rel="stylesheet" href="Stylesheets/footballImage.css"/>
     <script>var chartType = 0</script>
     <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
     <script src="force_directed_layout.js"></script>
@@ -14,34 +16,53 @@
     <script src="index.js"></script>
     <script src="sliderHandler.js"></script>
 </head>
-<body background="">
+<body bgcolor="#7fffd4">
 
 <header>
-    <div style="text-align:center; color:white; background-color: green" >
-        <h1 style="margin-top:0">FIFA 19 dataset</h1>
+    <div class="header">
+        <img class="logo" src="Images/2319365_full-lnd.jpg" height="114" width="200">
+        <h1 style="margin-top:0">FIFA 19 players' skills data</h1>
+
     </div>
 </header>
 
 <!--<h2>Vertical Navigation Bar</h2>-->
 <!--<p>In this example, we create an "active" class with a green background color and a white text. The class is added to the "Home" link.</p>-->
-
+<!--<p>Choose an attribute to render the corresponding graph</p>-->
 <ul>
     <li><a id = "btnOverall" class="active" href="#" onclick="fnOverall()">Overall</a></li>
     <li><a id = "btnBalance" href="#" onclick="fnBalance()">Balance</a></li>
     <li><a id = "btnStamina" href="#" onclick="fnStamina()">Stamina</a></li>
     <li><a id = "btnStrength" href="#" onclick="fnStrength()">Strength</a></li>
+    <li><a id = "btnHeadingAccuracy" href="#" onclick="fnHeadingAccuracy()">Heading Accuracy</a></li>
+    <li><a id = "btnDribbling" href="#" onclick="fnDribbling()">Dribbling</a></li>
+    <li><a id = "btnBallControl" href="#" onclick="fnBallControl()">Ball Control</a></li>
+    <li><a id = "btnAcceleration" href="#" onclick="fnAcceleration()">Acceleration</a></li>
+    <li><a id = "btnSprintSpeed" href="#" onclick="fnSprintSpeed()">Sprint Speed</a></li>
+    <li><a id = "btnAgility" href="#" onclick="fnAgility()">Agility</a></li>
+    <li><a id = "btnShotPower" href="#" onclick="fnShotPower()">Shot Power</a></li>
+    <li><a id = "btnAggression" href="#" onclick="fnAggression()">Aggression</a></li>
+    <li><a id = "btnJumping" href="#" onclick="fnJumping()">Jumping</a></li>
+    <li><a id = "btnVision" href="#" onclick="fnVision()">Vision</a></li>
+    <li><a id = "btnComposure" href="#" onclick="fnComposure()">Composure</a></li>
+
 </ul>
 
-<div id="svgContainer" class="svgContainer">
+<div id="svgContainer" class="svgContainer" >
     <svg id="mysvg" width="1000" height="500"></svg>
 </div>
 
 <div id="mySliderContainer" class="sliderContainer">
     <p id="sliderNumber" align="center">Number of bins: 10</p>
     <input id="slider" class="slider" type="range" min="5" max="15" value="10" onchange="sliderHandler(value)">
+    <pre align="center">5                                                              15</pre>
+    <p align="center">Drag the slider to adjust the number of bins.</p>
 
 </div>
 
+<div class="footballImage">
+    <img src="Images/football-161132_960_720.png" width="300px">
+</div>
 <!--<div id="slider">-->
     <!--<input class="bar" type="range" id="rangeinput" min="1" max="25" value="1" onchange="rangevalue.value=value"/>-->
     <!--<span class="highlight"></span>-->

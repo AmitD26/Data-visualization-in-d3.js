@@ -19,7 +19,8 @@ function drawForceDirectedLayout(data, noOfBins) {
 
     var nodes = [];
     var links = [];
-    var count = 0
+    var count = 0;
+    var flag = true;
     for (var i = 0; i < 5000; i+= 500) {
         nodes.push({id: count,
                     overall: overall[i],
@@ -30,11 +31,16 @@ function drawForceDirectedLayout(data, noOfBins) {
             if (i === j) {
                 break;
             }
-            links.push({id: count,
-                        source: i/500,
-                        target: j/500,
-                        distance: 4*Math.sqrt(Math.pow((overall[j] - overall[i]), 2) + Math.pow((balance[j] - balance[i]), 2) + Math.pow((stamina[j] - stamina[i]), 2) + Math.pow((strength[j] - strength[i]), 2))})
-            count++;
+            if (flag) {
+                links.push({
+                    id: count,
+                    source: i / 500,
+                    target: j / 500,
+                    distance: 4 * Math.sqrt(Math.pow((overall[j] - overall[i]), 2) + Math.pow((balance[j] - balance[i]), 2) + Math.pow((stamina[j] - stamina[i]), 2) + Math.pow((strength[j] - strength[i]), 2))
+                });
+                count++;
+            }
+            flag = !flag;
         }
     }
 
@@ -65,7 +71,7 @@ function drawForceDirectedLayout(data, noOfBins) {
         .attr("x", 50)
         .attr("y", 50)
         .attr("font-size", "24px")
-        .text("FIFA 19 data");
+        .text("Force-directed layout");
     //
     // //Set background color of svg container or chart.
     // svg.append("rect")
@@ -263,7 +269,7 @@ function drawForceDirectedLayout(data, noOfBins) {
     var charge_force = d3.forceManyBody()
         .strength(-100);
 
-    var center_force = d3.forceCenter(width / 2, height / 2);
+    var center_force = d3.forceCenter(width / 2, height / 2 + 100);
 
     simulation
         .force("charge_force", charge_force)
