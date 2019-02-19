@@ -12,7 +12,7 @@ function drawPieChart(data, noOfBins) {
     var binValues = [];
     for(var i = 0; i < noOfBins; i++){
         var end = (+min + +binSize).toFixed(1);
-        binValues.push(min + "-" + end);
+        binValues.push(min + " - " + end);
         min = end;
     }
 
@@ -25,7 +25,7 @@ function drawPieChart(data, noOfBins) {
         .attr("transform", "translate(300,0)")
         .attr("x", 50)
         .attr("y", 50)
-        .attr("font-size", "24px")
+        .attr("font-size", "24px");
 
     binValArray.pop();
     var radius = Math.min(width, height) / 2 + 50;
@@ -61,12 +61,13 @@ function drawPieChart(data, noOfBins) {
         .style("fill", function(d, i) {
             return color(i);
         })
+        .attr("stroke", "black")
 
         .on("mouseover", function(d,i) {
             d3.select(this)
                 .transition().duration(400)
                 .attr("d", arcBig)
-                .attr("stroke", "black")
+                .attr("stroke", "black");
             d3.selectAll("text").each(function (d, currI) {
                 if (currI-1 === i) {
                     d3.select(this).style("visibility", "visible");
@@ -104,5 +105,30 @@ function drawPieChart(data, noOfBins) {
         .style("font-weight", "bold")
         .style("font-size", "14px")
         .style("visibility", "hidden");
+
+    var legend = svg.append("g").selectAll('.legend-entry').data(binValArray)
+        .enter().append('g')
+        .attr('class', 'legend-entry');
+
+    legend.append('rect')
+        .attr('class', 'legend-rect')
+        .attr('x', 280)
+        .attr('y', function (d, i) { return i * 20 - 8 })
+        .attr('width', 10)
+        .attr('height', 10)
+        .attr('fill', function (d, i) {
+            return color(i)
+        });
+
+    legend.append('text')
+        .attr('class', 'legend-text')
+        .attr('x', 300)
+        .attr('y', function (d, i) { return i * 20 })
+        .attr("fill", "black")
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "12px")
+        .text(function (d, i) {
+            return binValues[i];
+        });
 
 }

@@ -76,9 +76,9 @@
         .transition()
         .ease(d3.easeLinear)
         .duration(600)
-        // .delay(function (d, i) {
-        //     return i * 50;
-        // })
+        .delay(function (d, i) {
+            return i * 100;
+        })
         .attr("y", function(d, i) { return y(binValArray[i]); })
         .attr("height", function(d, i) { return height - y(binValArray[i]); });
 
@@ -87,7 +87,7 @@
         d3.select(this).attr('class', 'highlight');
         d3.select(this)
             .transition()
-            .duration(400)
+            .duration(200)
             .attr('width', x.bandwidth() + 5)
             .attr("y", function() { return y(binValArray[i]) - 10; })
             .attr("height", function() { return height - y(binValArray[i]) + 10; });
@@ -101,7 +101,7 @@
                 return y(binValArray[i]) - 15;
             })
             .text(function() {
-                return [+binValArray[i]];  // Value of the text
+                return [+binValArray[i]];
             });
     }
 
@@ -109,7 +109,7 @@
         d3.select(this).attr('class', 'bar');
         d3.select(this)
             .transition()
-            .duration(400)
+            .duration(200)
             .attr('width', x.bandwidth())
             .attr("y", function() { return y(binValArray[i]); })
             .attr("height", function() { return height - y(binValArray[i]); });
