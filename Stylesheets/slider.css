@@ -3,7 +3,7 @@
     width: 100%;
     height: 15px;
     border-radius: 5px;
-    background: chartreuse;
+    background: deepskyblue;
     outline: none;
     opacity: 1.0;
     -webkit-transition: .2s;
@@ -16,7 +16,7 @@
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: green;
+    background: darkblue;
     cursor: pointer;
 }
 
@@ -24,7 +24,7 @@
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: green;
+    background: darkblue;
     cursor: pointer;
 }
 

@@ -30,7 +30,7 @@
         .attr("x", 50)
         .attr("y", 50)
         .attr("font-size", "24px")
-        .text("Bar chart");
+        // .text("Bar chart");
 
     var x = d3.scaleBand().range([0, width]).padding(0.4);
     var y = d3.scaleLinear().range([height, 0]);
@@ -81,14 +81,17 @@
         .on("mouseout", onMouseOut)   //done to apply animation when mouse hovers over a particular bar and goes out
         .on("click", onClick)
         .attr("x", function(d) { return x(d); })
-        .attr("y", function(d, i) { return y(binValArray[i]); })
+        // .attr("y", function(d, i) { return y(binValArray[i]); })
+        .attr("y", height)
+        .attr("height", 0)
         .attr("width", x.bandwidth())
         .transition()
         .ease(d3.easeLinear)
-        .duration(400)
-        .delay(function (d, i) {
-            return i * 50;
-        })
+        .duration(600)
+        // .delay(function (d, i) {
+        //     return i * 50;
+        // })
+        .attr("y", function(d, i) { return y(binValArray[i]); })
         .attr("height", function(d, i) { return height - y(binValArray[i]); });
 
 

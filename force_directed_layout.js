@@ -71,7 +71,7 @@ function drawForceDirectedLayout(data, noOfBins) {
         .attr("x", 50)
         .attr("y", 50)
         .attr("font-size", "24px")
-        .text("Force-directed layout");
+        // .text("Force-directed layout using a 10 sampled data points and Euclidean distances. Half of the links considered to avoid cluttering.");
     //
     // //Set background color of svg container or chart.
     // svg.append("rect")
@@ -269,7 +269,7 @@ function drawForceDirectedLayout(data, noOfBins) {
     var charge_force = d3.forceManyBody()
         .strength(-100);
 
-    var center_force = d3.forceCenter(width / 2, height / 2 + 100);
+    var center_force = d3.forceCenter(width / 2, height / 2 + 50);
 
     simulation
         .force("charge_force", charge_force)

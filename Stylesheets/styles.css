@@ -22,7 +22,7 @@ li a {
 
 li a.active {
     /*background-color: #4CAF50;*/
-    background-color: green;
+    background-color: darkblue;
     color: white;
 }
 
@@ -32,11 +32,11 @@ li a:hover:not(.active) {
 }
 
 .bar {
-    fill: green;
+    fill: darkblue;
 }
 
 .highlight {
-    fill: chartreuse;
+    fill: deepskyblue;
 }
 
 .links line {
@@ -50,6 +50,6 @@ li a:hover:not(.active) {
 }
 
 .grid line {
-    stroke: green;
+    stroke: darkblue;
     stroke-opacity: 0.5
 }
