@@ -286,21 +286,9 @@ var composure = [];
 var standingTackle = [];
 var slidingTackle = [];
 
-// console.log(overall);
 
 d3.csv("data.csv", function(csvdata) {
-    // fl = 0;
     csvdata.map(function (d) {
-        // if (fl == 0) {
-        //     console.log(typeof +d.Overall)
-        // }
-        // fl = 1
-        // if(fl==0){
-        // console.log(+eval(d.overall))}
-        // fl=1;
-        // console.log(+eval(d.overall))
-
-        // if (!isNaN(d.overall)) {
         overall.push(+d.Overall);
         balance.push(+d.Balance);
         strength.push(+d.Strength);
@@ -320,20 +308,7 @@ d3.csv("data.csv", function(csvdata) {
         composure.push(+d.Composure);
         standingTackle.push(+d.StandingTackle);
         slidingTackle.push(+d.SlidingTackle);
-
-
-        // }
-        // if (!isNaN(d.ST)) {
-        //     ST.push(+d.ST);
-        // }
-        // if (!isNaN(d.RS)) {
-        //     RS.push(+d.RS);
-        // }
-        // if (!isNaN(d.LW)) {
-        //     LW.push(+d.LW);
-        // }
     });
     drawBarChart(overall, 10);
 });
-// console.log(overall);
 
