@@ -31,7 +31,7 @@ function drawPieChart(data, noOfBins) {
         .attr("x", 50)
         .attr("y", 50)
         .attr("font-size", "24px")
-        .text("Pie chart");
+        // .text("Pie chart");
 
 
 
@@ -109,6 +109,7 @@ function drawPieChart(data, noOfBins) {
         .attr("class", "arc");
 
     renderArcs.append("path")
+        // .transition().duration(400)
         .attr("d", arc)
         .style("fill", function(d, i) {
             return color(i);
