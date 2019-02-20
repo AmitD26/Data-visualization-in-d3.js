@@ -14,9 +14,8 @@
     <script src="pie_chart.js"></script>
     <script src="bar_chart.js"></script>
     <script src="index.js"></script>
-    <script src="sliderHandler.js"></script>
 </head>
-<!--<body bgcolor="#7fffd4">-->
+
 <body bgcolor="white">
 <header>
     <div class="header">
@@ -26,9 +25,6 @@
     </div>
 </header>
 
-<!--<h2>Vertical Navigation Bar</h2>-->
-<!--<p>In this example, we create an "active" class with a green background color and a white text. The class is added to the "Home" link.</p>-->
-<!--<p>Choose an attribute to render the corresponding graph</p>-->
 <ul>
     <li><a id = "btnOverall" class="active" href="#" onclick="fnOverall()">Overall</a></li>
     <li><a id = "btnBalance" href="#" onclick="fnBalance()">Balance</a></li>
@@ -37,6 +33,8 @@
     <li><a id = "btnHeadingAccuracy" href="#" onclick="fnHeadingAccuracy()">Heading Accuracy</a></li>
     <li><a id = "btnShortPassing" href="#" onclick="fnShortPassing()">Short Passing</a></li>
     <li><a id = "btnLongPassing" href="#" onclick="fnLongPassing()">Long Passing</a></li>
+    <li><a id = "btnStandingTackle" href="#" onclick="fnStandingTackle()">Standing Tackle</a></li>
+    <li><a id = "btnSlidingTackle" href="#" onclick="fnSlidingTackle()">Sliding Tackle</a></li>
     <li><a id = "btnDribbling" href="#" onclick="fnDribbling()">Dribbling</a></li>
     <li><a id = "btnBallControl" href="#" onclick="fnBallControl()">Ball Control</a></li>
     <li><a id = "btnAcceleration" href="#" onclick="fnAcceleration()">Acceleration</a></li>
@@ -47,8 +45,6 @@
     <li><a id = "btnJumping" href="#" onclick="fnJumping()">Jumping</a></li>
     <li><a id = "btnVision" href="#" onclick="fnVision()">Vision</a></li>
     <li><a id = "btnComposure" href="#" onclick="fnComposure()">Composure</a></li>
-    <li><a id = "btnStandingTackle" href="#" onclick="fnStandingTackle()">Standing Tackle</a></li>
-    <li><a id = "btnSlidingTackle" href="#" onclick="fnSlidingTackle()">Sliding Tackle</a></li>
 
 </ul>
 
@@ -67,11 +63,6 @@
 <div class="footballImage">
     <img src="Images/football-161132_960_720.png" width="200px">
 </div>
-<!--<div id="slider">-->
-    <!--<input class="bar" type="range" id="rangeinput" min="1" max="25" value="1" onchange="rangevalue.value=value"/>-->
-    <!--<span class="highlight"></span>-->
-    <!--<output id="rangevalue">1</output>-->
-<!--</div>-->
 
 </body>
 </html>
