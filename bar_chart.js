@@ -77,7 +77,7 @@
         .ease(d3.easeLinear)
         .duration(600)
         .delay(function (d, i) {
-            return i * 100;
+            return i * 50;
         })
         .attr("y", function(d, i) { return y(binValArray[i]); })
         .attr("height", function(d, i) { return height - y(binValArray[i]); });
