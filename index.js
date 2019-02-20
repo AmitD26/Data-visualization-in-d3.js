@@ -253,7 +253,7 @@ function fnStandingTackle() {
 
 function fnSlidingTackle() {
     document.getElementsByClassName("active")[0].className = "";
-    document.getElementById("btnComposure").className = "active";
+    document.getElementById("btnSlidingTackle").className = "active";
     noOfBins = document.getElementById("slider").value;
     document.getElementById("mysvg").innerHTML = "";
     if (chartType == 1) {
