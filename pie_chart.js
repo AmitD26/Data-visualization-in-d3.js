@@ -54,8 +54,8 @@ function drawPieChart(data, noOfBins) {
     var arcs = svg.selectAll(".arc")
         .data(pie(binValArray))
         .enter().append("g")
-        .attr("class", "arc")
-        .append("path")
+        .attr("class", "arc");
+    arcs.append("path")
         .attr("d", arc)
         .style("fill", function(d, i) {
             return color(i);
@@ -79,8 +79,8 @@ function drawPieChart(data, noOfBins) {
                 .transition().duration(1000)
                 .attr("d",arc);
 
-            d3.selectAll("text").each(function (d, currI) {
-                if (currI-1 === i) {
+            d3.selectAll("text").each(function (d, curr) {
+                if (curr-1 === i) {
                     d3.select(this).style("visibility", "hidden");
                 }
             })
@@ -99,11 +99,11 @@ function drawPieChart(data, noOfBins) {
         })
         .attr("dy", ".35em")
         .text(function(d) {
-            return d;
+            return d.value;
         })
         .style("font-weight", "bold")
         .style("font-size", "14px")
-        .style("visibility", "visible");
+        .style("visibility", "hidden");
 
     var legend = svg.append("g").selectAll('.legend-entry').data(binValArray)
         .enter().append('g')
