@@ -51,12 +51,11 @@ function drawPieChart(data, noOfBins) {
         .append("g")
         .attr("transform", "translate(" + 0.50 * width + "," + 0.90 * height + ")");
 
-    var renderArcs = svg.selectAll(".arc")
+    var arcs = svg.selectAll(".arc")
         .data(pie(binValArray))
         .enter().append("g")
-        .attr("class", "arc");
-
-    renderArcs.append("path")
+        .attr("class", "arc")
+        .append("path")
         .attr("d", arc)
         .style("fill", function(d, i) {
             return color(i);
@@ -68,8 +67,8 @@ function drawPieChart(data, noOfBins) {
                 .transition().duration(400)
                 .attr("d", arcBig)
                 .attr("stroke", "black");
-            d3.selectAll("text").each(function (d, currI) {
-                if (currI-1 === i) {
+            d3.selectAll("text").each(function (d, curr) {
+                if (curr-1 === i) {
                     d3.select(this).style("visibility", "visible");
                 }
             })
@@ -87,24 +86,24 @@ function drawPieChart(data, noOfBins) {
             })
         });
 
-    renderArcs.on("click", function() {
+    arcs.on("click", function() {
         chartType = 2;
         document.getElementById("mysvg").innerHTML = "";
         document.getElementById("mySliderContainer").style.visibility = "hidden";
         drawForceDirectedLayout(data, noOfBins);
     });
 
-    renderArcs.append("text")
+    arcs.append("text")
         .attr("transform", function(d) {
             return "translate(" + labelArc.centroid(d) + ")";
         })
         .attr("dy", ".35em")
         .text(function(d) {
-            return d.value;
+            return d;
         })
         .style("font-weight", "bold")
         .style("font-size", "14px")
-        .style("visibility", "hidden");
+        .style("visibility", "visible");
 
     var legend = svg.append("g").selectAll('.legend-entry').data(binValArray)
         .enter().append('g')
@@ -113,7 +112,7 @@ function drawPieChart(data, noOfBins) {
     legend.append('rect')
         .attr('class', 'legend-rect')
         .attr('x', 280)
-        .attr('y', function (d, i) { return i * 20 - 8 })
+        .attr('y', function (d, i) { return i * 15 })
         .attr('width', 10)
         .attr('height', 10)
         .attr('fill', function (d, i) {
@@ -123,7 +122,7 @@ function drawPieChart(data, noOfBins) {
     legend.append('text')
         .attr('class', 'legend-text')
         .attr('x', 300)
-        .attr('y', function (d, i) { return i * 20 })
+        .attr('y', function (d, i) { return i * 15 + 9 })
         .attr("fill", "black")
         .attr("font-family", "sans-serif")
         .attr("font-size", "12px")

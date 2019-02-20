@@ -312,3 +312,7 @@ d3.csv("data.csv", function(csvdata) {
     drawBarChart(overall, 10);
 });
 
+function sliderHandler(value) {
+    document.getElementById("sliderNumber").innerHTML = "Number of bins: " + value;
+    document.getElementsByClassName("active")[0].click();
+}
