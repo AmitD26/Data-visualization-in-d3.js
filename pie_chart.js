@@ -158,4 +158,28 @@ function drawPieChart(data, noOfBins) {
         .style("font-size", "14px")
         .style("visibility", "hidden");
 
+    var legend = svg.append("g").selectAll('.legend-entry').data(binValArray)
+        .enter().append('g')
+        .attr('class', 'legend-entry');
+
+    legend.append('rect')
+        .attr('class', 'legend-rect')
+        .attr('x', 280)
+        .attr('y', function (d, i) { return i * 15 })
+        .attr('width', 10)
+        .attr('height', 10)
+        .attr('fill', function (d, i) {
+            return color(i)
+        });
+
+    legend.append('text')
+        .attr('class', 'legend-text')
+        .attr('x', 300)
+        .attr('y', function (d, i) { return i * 15 + 9 })
+        .attr("fill", "black")
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "12px")
+        .text(function (d, i) {
+            return binValues[i];
+        });
 }
